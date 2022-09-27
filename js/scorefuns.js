@@ -21,7 +21,7 @@ hbtn1.addEventListener("click", function () {
   if (isalive) {
     homeScore += 1;
     hscore.textContent = homeScore;
-    endBtn.click();
+    checkscores();
   }
 });
 hbtn2.addEventListener("click", function () {
@@ -128,3 +128,54 @@ newBtn.addEventListener("click", function () {
   }
   isalive = true;
 });
+
+function checkscores (){
+ if (homeScore > guestScore) {
+    guestBG.classList.remove("winner");
+    guestBG.classList.remove("losser");  
+    guestBG.classList.remove("draw");  
+    homeBG.classList.remove("draw");  
+    homeBG.classList.add("winner");
+    g_btn.forEach((y) => {
+      y.style.backgroundColor = "#1b244a";
+    });
+    h_btn.forEach((x) => {
+      x.style.backgroundColor = "green";
+    });
+
+    message.textContent = "EQUIPO CNR GANA";
+    
+    message.classList.remove("losser");  
+    message.classList.add("winner");
+    //isalive = false;
+  } else if (homeScore === guestScore) {
+    guestBG.classList.add("draw");
+    g_btn.forEach((y) => {
+      y.style.backgroundColor = "blueviolet";
+    });
+    homeBG.classList.add("draw");
+    h_btn.forEach((y) => {
+      y.style.backgroundColor = "blueviolet";
+    });
+    message.textContent = "PARTIDO EMPATADO";
+    message.classList.remove("winner");
+    message.classList.remove("losser");      
+    //isalive = false;
+  } else {
+    homeBG.classList.remove("winner");
+    guestBG.classList.remove("winner");  
+    guestBG.classList.remove("draw");  
+    homeBG.classList.remove("draw");        
+    guestBG.classList.add("losser");
+    h_btn.forEach((y) => {
+      y.style.backgroundColor = "#1b244a";
+    });
+    g_btn.forEach((x) => {
+      x.style.backgroundColor = "green";
+    });
+    message.textContent = "OTRO EQUIPO GANA";
+    message.classList.remove("winner");
+    message.classList.add("losser");  
+    //isalive = false;
+  }
+}
