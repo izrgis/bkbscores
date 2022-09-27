@@ -21,6 +21,7 @@ hbtn1.addEventListener("click", function () {
   if (isalive) {
     homeScore += 1;
     hscore.textContent = homeScore;
+    endBtn.click();
   }
 });
 hbtn2.addEventListener("click", function () {
