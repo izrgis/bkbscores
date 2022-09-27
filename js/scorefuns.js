@@ -28,12 +28,14 @@ hbtn2.addEventListener("click", function () {
   if (isalive) {
     homeScore += 2;
     hscore.textContent = homeScore;
+    checkscores();
   }
 });
 hbtn3.addEventListener("click", function () {
   if (isalive) {
     homeScore += 3;
     hscore.textContent = homeScore;
+    checkscores();
   }
 });
 
@@ -41,18 +43,21 @@ gbtn1.addEventListener("click", function () {
   if (isalive) {
     guestScore += 1;
     gscore.textContent = guestScore;
+    checkscores();
   }
 });
 gbtn2.addEventListener("click", function () {
   if (isalive) {
     guestScore += 2;
     gscore.textContent = guestScore;
+    checkscores();
   }
 });
 gbtn3.addEventListener("click", function () {
   if (isalive) {
     guestScore += 3;
     gscore.textContent = guestScore;
+    checkscores();
   }
 });
 
